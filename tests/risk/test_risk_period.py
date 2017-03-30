@@ -36,9 +36,6 @@ DECIMAL_PLACES = 8
 
 class TestRisk(WithTradingEnvironment, ZiplineTestCase):
 
-    TRADING_CALENDAR_STRS = ('NYSE',)
-    TRADING_CALENDAR_PRIMARY_CAL = 'NYSE'
-
     def init_instance_fixtures(self):
         super(TestRisk, self).init_instance_fixtures()
         self.start_session = pd.Timestamp("2006-01-01", tz='UTC')
@@ -388,7 +385,7 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
     def test_partial_month(self):
 
         start_session = self.trading_calendar.minute_to_session_label(
-            pd.Timestamp("1991-01-01", tz='UTC')
+            pd.Timestamp("2008-01-01", tz='UTC')
         )
 
         # 2008 and 2012 were leap years
