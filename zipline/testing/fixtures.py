@@ -491,6 +491,9 @@ class WithTradingEnvironment(WithAssetFinder,
 
     @classmethod
     def make_trading_environment(cls):
+        print('((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((')
+        print(cls.trading_calendar)
+        print('((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((')
         return TradingEnvironment(
             load=cls.make_load_function(),
             asset_db_path=cls.asset_finder.engine,
