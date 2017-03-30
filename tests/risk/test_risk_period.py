@@ -385,7 +385,7 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
     def test_partial_month(self):
 
         start_session = self.trading_calendar.minute_to_session_label(
-            pd.Timestamp("2008-01-01", tz='UTC')
+            pd.Timestamp("1991-01-01", tz='UTC')
         )
 
         # 2008 and 2012 were leap years
@@ -399,6 +399,10 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
 
         returns = factory.create_returns_from_range(sim_params)
         returns = returns[:-10]  # truncate the returns series to end mid-month
+        print('##############################################################')
+        print(returns)
+        print(self.env.benchmark_returns)
+        print('##############################################################')
         metrics = risk.RiskReport(returns, sim_params,
                                   trading_calendar=self.trading_calendar,
                                   treasury_curves=self.env.treasury_curves,
