@@ -44,6 +44,7 @@ class AssetDispatchSessionBarTestCase(WithBcolzEquityDailyBarReader,
 
     TRADING_CALENDAR_STRS = ('CME', 'NYSE')
     TRADING_CALENDAR_PRIMARY_CAL = 'CME'
+    print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
 
     ASSET_FINDER_EQUITY_SIDS = 1, 2, 3
 
@@ -171,8 +172,9 @@ class AssetDispatchMinuteBarTestCase(WithBcolzEquityMinuteBarReader,
                                      WithBcolzFutureMinuteBarReader,
                                      ZiplineTestCase):
 
-    TRADING_CALENDAR_STRS = ('us_futures', 'NYSE')
-    TRADING_CALENDAR_PRIMARY_CAL = 'us_futures'
+    TRADING_CALENDAR_STRS = ('CME', 'NYSE')
+    TRADING_CALENDAR_PRIMARY_CAL = 'CME'
+    print('******************************************************************')
 
     ASSET_FINDER_EQUITY_SIDS = 1, 2, 3
 
