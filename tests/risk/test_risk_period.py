@@ -36,6 +36,8 @@ DECIMAL_PLACES = 8
 
 class TestRisk(WithTradingEnvironment, ZiplineTestCase):
 
+    TRADING_CALENDAR_PRIMARY_CAL = 'NYSE'
+
     def init_instance_fixtures(self):
         super(TestRisk, self).init_instance_fixtures()
         self.start_session = pd.Timestamp("2006-01-01", tz='UTC')
