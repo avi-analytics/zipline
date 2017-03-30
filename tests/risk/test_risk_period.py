@@ -63,6 +63,9 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
             trading_calendar=self.trading_calendar,
             treasury_curves=self.env.treasury_curves,
         )
+        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+        print(self.env.benchmark_returns.index[:5])
+        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
 
     def test_factory(self):
         returns = [0.1] * 100
@@ -400,8 +403,8 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
         returns = factory.create_returns_from_range(sim_params)
         returns = returns[:-10]  # truncate the returns series to end mid-month
         print('##############################################################')
-        print(returns)
-        print(self.env.benchmark_returns)
+        print(returns.index[:5])
+        print(self.env.benchmark_returns.index[:5])
         print('##############################################################')
         metrics = risk.RiskReport(returns, sim_params,
                                   trading_calendar=self.trading_calendar,

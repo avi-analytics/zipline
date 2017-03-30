@@ -499,6 +499,9 @@ class WithTradingEnvironment(WithAssetFinder,
     def init_class_fixtures(cls):
         super(WithTradingEnvironment, cls).init_class_fixtures()
         cls.env = cls.make_trading_environment()
+        print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+        print(cls.env.benchmark_returns.index[:5])
+        print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 
 class WithSimParams(WithTradingEnvironment):
