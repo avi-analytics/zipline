@@ -408,7 +408,7 @@ class AssetDBWriter(object):
                   The last date we have trade data for this asset.
               first_traded : datetime, optional
                   The first date we have trade data for this asset.
-              exchange : str, optional
+              exchange : str
                   The exchange where this asset is traded.
               notice_date : datetime
                   The date when the owner of the contract may be forced
