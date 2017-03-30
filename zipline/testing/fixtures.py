@@ -439,6 +439,9 @@ class WithTradingCalendars(object):
         for exchange, cal_str in iteritems(cls.TRADING_CALENDAR_FOR_EXCHANGE):
             register_calendar(exchange, get_calendar(cal_str))
             cls.trading_calendars[exchange] = get_calendar(cal_str)
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print(cls.TRADING_CALENDAR_PRIMARY_CAL)
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         cls.trading_calendar = cls.trading_calendars[
             cls.TRADING_CALENDAR_PRIMARY_CAL]
 

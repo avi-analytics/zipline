@@ -36,6 +36,7 @@ DECIMAL_PLACES = 8
 
 class TestRisk(WithTradingEnvironment, ZiplineTestCase):
 
+    TRADING_CALENDAR_STRS = ('NYSE',)
     TRADING_CALENDAR_PRIMARY_CAL = 'NYSE'
 
     def init_instance_fixtures(self):
