@@ -44,7 +44,6 @@ class AssetDispatchSessionBarTestCase(WithBcolzEquityDailyBarReader,
 
     TRADING_CALENDAR_STRS = ('us_futures', 'NYSE')
     TRADING_CALENDAR_PRIMARY_CAL = 'us_futures'
-    print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
 
     ASSET_FINDER_EQUITY_SIDS = 1, 2, 3
 
@@ -174,7 +173,6 @@ class AssetDispatchMinuteBarTestCase(WithBcolzEquityMinuteBarReader,
 
     TRADING_CALENDAR_STRS = ('us_futures', 'NYSE')
     TRADING_CALENDAR_PRIMARY_CAL = 'us_futures'
-    print('******************************************************************')
 
     ASSET_FINDER_EQUITY_SIDS = 1, 2, 3
 

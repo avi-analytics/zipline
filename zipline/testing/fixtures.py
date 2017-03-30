@@ -439,9 +439,6 @@ class WithTradingCalendars(object):
         for exchange, cal_str in iteritems(cls.TRADING_CALENDAR_FOR_EXCHANGE):
             register_calendar(exchange, get_calendar(cal_str))
             cls.trading_calendars[exchange] = get_calendar(cal_str)
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        print(cls.TRADING_CALENDAR_PRIMARY_CAL)
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         cls.trading_calendar = cls.trading_calendars[
             cls.TRADING_CALENDAR_PRIMARY_CAL]
 
@@ -491,9 +488,6 @@ class WithTradingEnvironment(WithAssetFinder,
 
     @classmethod
     def make_trading_environment(cls):
-        print('((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((')
-        print(cls.trading_calendar)
-        print('((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((')
         return TradingEnvironment(
             load=cls.make_load_function(),
             asset_db_path=cls.asset_finder.engine,
@@ -505,9 +499,6 @@ class WithTradingEnvironment(WithAssetFinder,
     def init_class_fixtures(cls):
         super(WithTradingEnvironment, cls).init_class_fixtures()
         cls.env = cls.make_trading_environment()
-        print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-        print(cls.env.benchmark_returns.index[:5])
-        print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 
 class WithSimParams(WithTradingEnvironment):
