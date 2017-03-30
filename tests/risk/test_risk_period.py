@@ -64,6 +64,11 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
             treasury_curves=self.env.treasury_curves,
         )
 
+    @classmethod
+    def init_class_fixtures(cls):
+        cls.TRADING_CALENDAR_PRIMARY_CAL = 'NYSE'
+        super(TestRisk, cls).init_class_fixtures()
+
     def test_factory(self):
         returns = [0.1] * 100
         r_objects = factory.create_returns_from_list(returns, self.sim_params)
@@ -385,7 +390,7 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
     def test_partial_month(self):
 
         start_session = self.trading_calendar.minute_to_session_label(
-            pd.Timestamp("2008-01-01", tz='UTC')
+            pd.Timestamp("1991-01-01", tz='UTC')
         )
 
         # 2008 and 2012 were leap years
