@@ -65,6 +65,8 @@ class TestRisk(WithTradingEnvironment, ZiplineTestCase):
         )
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
         print(self.env.benchmark_returns.index[:5])
+        print(self.trading_calendar)
+        print(self.TRADING_CALENDAR_PRIMARY_CAL)
         print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
 
     def test_factory(self):
