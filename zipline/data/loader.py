@@ -292,7 +292,6 @@ def _load_cached_data(filename, first_date, last_date, now, resource_name):
         if has_data_for_dates(data, first_date, last_date):
             return data
     except (OSError, IOError, ValueError) as e:
-        from nose.tools import set_trace; set_trace()
         # These can all be raised by various versions of pandas on various
         # classes of malformed input.
         logger.info(
