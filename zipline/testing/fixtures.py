@@ -1,4 +1,3 @@
-from os.path import join
 import sqlite3
 from unittest import TestCase
 
@@ -482,26 +481,10 @@ class WithTradingEnvironment(WithAssetFinder,
     :class:`zipline.finance.trading.TradingEnvironment`
     """
     TRADING_ENV_FUTURE_CHAIN_PREDICATES = None
-    RESOURCE_DIR = join('tests/resources')
 
     @classmethod
     def make_load_function(cls):
-        """
-        Load benchmark returns and treasury curves data from a static csv file.
-
-        This ensures that we have data over a consistent date range for the
-        entirety of the zipline tests, and guarantees that the data covers the
-        dates required for tests on both the equity and futures calendars.
-        """
-        benchmark_csv_path = join(cls.RESOURCE_DIR, '^GSPC_benchmark.csv')
-        treasury_csv_path = join(cls.RESOURCE_DIR, 'treasury_curves.csv')
-
-        def load(*args, **kwargs):
-            return (
-                pd.Series.from_csv(benchmark_csv_path).tz_localize('UTC'),
-                pd.DataFrame.from_csv(treasury_csv_path).tz_localize('UTC'),
-            )
-        return load
+        return None
 
     @classmethod
     def make_trading_environment(cls):
